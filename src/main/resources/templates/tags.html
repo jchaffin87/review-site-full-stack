@@ -19,7 +19,7 @@
 			<h3><a href="/reviews">Reviews</a></h3>
 			<h3><a href="/categories">Categories</a></h3>
 			<h3><a href="/tags">Tags</a></h3>
-			
+
 			<header>
 				<h1>Here are the Tags</h1>
 			</header>
@@ -27,7 +27,7 @@
 
 			<ul>
 				<li th:each="tag: ${tags}">
-					<a th:href="@{/tags(id=${tag.tagId})}" th:text="${tag.tagName}"></a>
+					<a th:href="@{/tag(id=${tag.tagId})}" th:text="${tag.tagName}"></a>
 				</li>
 		 	</ul>
 		</div>

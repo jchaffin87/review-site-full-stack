@@ -31,7 +31,7 @@ public class ReviewsSiteController {
 	}
 
 	@RequestMapping("/review")
-	public String showOneReview(@RequestParam(value = "genreId") Long reviewId, Model model) {
+	public String showOneReview(@RequestParam(value = "id") Long reviewId, Model model) {
 		model.addAttribute("review", reviewRepo.findOne(reviewId));
 		return "review";
 	}
@@ -43,7 +43,7 @@ public class ReviewsSiteController {
 	}
 
 	@RequestMapping("/category")
-	public String showOneCategory(@RequestParam Long categoryId, Model model) {
+	public String showOneCategory(@RequestParam(value = "id") Long categoryId, Model model) {
 		model.addAttribute("category", categoryRepo.findOne(categoryId));
 		return "category";
 	}
@@ -55,7 +55,7 @@ public class ReviewsSiteController {
 	}
 
 	@RequestMapping("/tag")
-	public String showOneTag(@RequestParam Long tagId, Model model) {
+	public String showOneTag(@RequestParam(value = "id") Long tagId, Model model) {
 		model.addAttribute("tag", tagRepo.findOne(tagId));
 		return "tag";
 	}
