@@ -41,7 +41,7 @@ public class Tag {
 
 	@Override
 	public String toString() {
-		return String.format("Tag[tagId=%d, tagName='%s']", tagId, tagName);
+		return String.format("Tag[tagId='%d', tagName='%s']", tagId, tagName);
 	}
 
 }

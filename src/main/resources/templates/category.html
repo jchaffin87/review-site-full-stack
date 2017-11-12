@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Category</title>
+		<link rel="stylesheet" type="text/css" href="reviewsite-styles.css" />
+		<link href="https://fonts.googleapis.com/css?family=Merriweather"
+			rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css?family=Raleway"
+			rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+			rel="stylesheet"/>
+	</head>
+
+	<body>
+		
+		<h3><a href="/reviews">Reviews</a></h3>
+		<h3><a href="/categories">Categories</a></h3>
+		<h3><a href="/tags">Tags</a></h3>
+			
+		<header>
+			<h1>Category</h1>
+		</header>
+
+		<h2 th:text="${category.categoryName}"></h2>
+
+		<div th:each="currentReview: ${category.reviewsInCategory}">
+			<p th:text="${currentReview.reviewTitle}"></p>
+		</div>
+		
+	</body>
+</html>

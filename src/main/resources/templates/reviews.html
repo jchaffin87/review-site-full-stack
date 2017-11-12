@@ -2,29 +2,35 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-<title>John's Restaurant Review Site</title>
-<link rel="stylesheet" type="text/css" href="normalize.css"/>
-<link rel="stylesheet" type="text/css" href="reviewsite-styles.css" />
-<link href="https://fonts.googleapis.com/css?family=Merriweather"
-	rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Raleway"
-	rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
-	rel="stylesheet"/>
-</head>
+	<head>
+		<title>John's Restaurant Review Site</title>
+		<link rel="stylesheet" type="text/css" href="normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="reviewsite-styles.css" />
+		<link href="https://fonts.googleapis.com/css?family=Merriweather"
+			rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css?family=Raleway"
+			rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+			rel="stylesheet"/>
+	</head>
 
-<body>
-	<header>
-		<h1>John's Restaurant Review Site</h1>
-	</header>
+	<body>
+		<header>
+			<h1>John's Restaurant Review Site</h1>
+		</header>
 
-	<div th:each="review: ${reviews}">
-		<h2>
-			<a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a>
-		</h2>
-	</div>
+		<h3><a href="/reviews.html">Reviews</a></h3>
+		<h3><a href="/categories.html">Categories</a></h3>
+		<h3><a href="/tags.html">Tags</a></h3>
+	
 
-</body>
+		<div th:each="review: ${reviews}">
+			<img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
+			<h2>			
+				<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
+			</h2>
+		</div>
+
+	</body>
 
 </html>

@@ -17,7 +17,7 @@ public class Category {
 	private String categoryName;
 
 	@OneToMany(mappedBy = "category")
-	private Set<Category> restaurantsInCategory = new HashSet<Category>();
+	private Set<Review> reviewsInCategory = new HashSet<Review>();
 
 	protected Category() {
 
@@ -35,12 +35,12 @@ public class Category {
 		return categoryName;
 	}
 
-	public Set<Category> getRestaurantsInCategory() {
-		return restaurantsInCategory;
+	public Set<Review> getRestaurantsInCategory() {
+		return reviewsInCategory;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("Category[categoryId=%d, categoryName='%s']", categoryId, categoryName);
+		return String.format("Category[categoryId='%d', categoryName='%s']", categoryId, categoryName);
 	}
 }

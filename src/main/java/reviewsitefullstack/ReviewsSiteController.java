@@ -31,7 +31,7 @@ public class ReviewsSiteController {
 	}
 
 	@RequestMapping("/review")
-	public String showOneReview(@RequestParam Long reviewId, Model model) {
+	public String showOneReview(@RequestParam(value = "genreId") Long reviewId, Model model) {
 		model.addAttribute("review", reviewRepo.findOne(reviewId));
 		return "review";
 	}
