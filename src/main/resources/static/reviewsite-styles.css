@@ -1,0 +1,34 @@
+body {
+	background: #F1FFDD;
+	align-items: center;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	color: #99690F;
+}
+
+h2 {
+	font-family: 'Libre Baskerville', serif;
+	color: #8C600E;
+}
+
+p {
+	font-family: 'Raleway', sans-serif;
+	color: #4C3406;
+	text-align: left;
+}
+
+a {
+	font-family: 'Raleway', sans-serif;
+	text-decoration: none;
+	color: #0C1575;
+}
+
+a:visited {
+	color: #4F97FF;
+}
+
+a:hover {
+	color: #A4160E;
+}
