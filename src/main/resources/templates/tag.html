@@ -18,14 +18,15 @@
 		<h3><a href="/reviews">Reviews</a></h3>
 		<h3><a href="/categories">Categories</a></h3>
 		<h3><a href="/tags">Tags</a></h3>
-		
+
 		<header>
 			<h1>Tag</h1>
 		</header>
 
 		<h2 th:text="${tag.tagName}"></h2>
 
-		<div th:each="currentReview: ${category.reviewsTagged}">
+		<div th:each="currentreview: ${tag.reviewsTagged}">
+			<!-- <a th:href="@{/review(id=${currentreview.reviewId})}" th:text="${currentreview.reviewTitle}"></a> -->
 			<p th:text="${currentReview.reviewTitle}"></p>
 		</div>
 		

@@ -35,7 +35,7 @@ public class Category {
 		return categoryName;
 	}
 
-	public Set<Review> getRestaurantsInCategory() {
+	public Set<Review> getReviewsInCategory() {
 		return reviewsInCategory;
 	}
 
