@@ -66,12 +66,12 @@ public class Review {
 		return tags;
 	}
 
-	public void addTag(String tagName) {
-		if (!tagName.equals("")) {
-			Tag newTag = new Tag(tagName);
-			tags.add(newTag);
-		}
-	}
+	// public void addTag(String tagName) {
+	// if (!tagName.equals("")) {
+	// Tag newTag = new Tag(tagName);
+	// tags.add(newTag);
+	// }
+	// }
 
 	@Override
 	public String toString() {

@@ -5,6 +5,7 @@
 	<head>
 		<title>John's Restaurant Review Site</title>
 		<link rel="stylesheet" type="text/css" href="normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="reviewsite-layout.css" />
 		<link rel="stylesheet" type="text/css" href="reviewsite-styles.css" />
 		<link href="https://fonts.googleapis.com/css?family=Merriweather"
 			rel="stylesheet"/>
@@ -13,24 +14,30 @@
 		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
 			rel="stylesheet"/>
 	</head>
-
 	<body>
-		<header>
-			<h1>John's Restaurant Review Site</h1>
-		</header>
-
-		<h3><a href="/reviews.html">Reviews</a></h3>
-		<h3><a href="/categories.html">Categories</a></h3>
-		<h3><a href="/tags.html">Tags</a></h3>
-	
-
-		<div th:each="review: ${reviews}">
-			<img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
-			<h2>			
-				<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
-			</h2>
+		<div class="container">
+			<header>
+				<div class="headline">
+					<h1>John's Restaurant Review Site</h1>
+				</div>
+				<nav>
+					<h3><a href="/reviews.html">Reviews</a></h3>
+					<h3><a href="/categories.html">Categories</a></h3>
+					<h3><a href="/tags.html">Tags</a></h3>
+				</nav>
+			</header>
+			<main>
+				<div th:each="review: ${reviews}">
+					<img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
+					<h2>			
+						<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
+					</h2>
+				</div>
+			</main>
+			<footer>
+				<p>copyright John Ryan Chaffin, 2017</p>
+			</footer>
 		</div>
-
 	</body>
-
+	
 </html>

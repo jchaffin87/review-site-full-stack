@@ -60,10 +60,11 @@ public class ReviewsSiteController {
 		return "tag";
 	}
 
-	@RequestMapping("/add-tag")
-	public String addTagToReview(String tagName, Review review) {
-		review.addTag(tagName);
-		return "redirect:/course";
-	}
+	// @RequestMapping("/add-tag")
+	// public String addTagToReview(@RequestParam(value = "tagName") String tagName,
+	// Review review) {
+	// review.addTag(tagName);
+	// return "redirect:/course";
+	// }
 
 }
