@@ -4,6 +4,7 @@
 
 	<head>
 		<title>Tag</title>
+		<link rel="stylesheet" type="text/css" href="normalize.css"/>
 		<link rel="stylesheet" type="text/css" href="reviewsite-styles.css" />
 		<link href="https://fonts.googleapis.com/css?family=Merriweather"
 			rel="stylesheet"/>
@@ -23,11 +24,13 @@
 			<h1>Tag</h1>
 		</header>
 
-		<h2 th:text="${tag.tagName}"></h2>
+		<h2 th:text="'Restaurants tagged ' + ${tag.tagName}"></h2>
 
-		<div th:each="currentreview: ${tag.reviewsTagged}">
-			<!-- <a th:href="@{/review(id=${currentreview.reviewId})}" th:text="${currentreview.reviewTitle}"></a> -->
-			<p th:text="${currentReview.reviewTitle}"></p>
+		<div th:each="review: ${tag.reviewsTagged}">
+			<img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
+			<h2>			
+				<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
+			</h2>
 		</div>
 		
 	</body>

@@ -4,6 +4,7 @@
 
 	<head>
 		<title>Review</title>
+		<link rel="stylesheet" type="text/css" href="normalize.css"/>
 		<link rel="stylesheet" type="text/css" href="reviewsite-styles.css" />
 		<link href="https://fonts.googleapis.com/css?family=Merriweather"
 			rel="stylesheet"/>
@@ -18,15 +19,32 @@
 		<h3><a href="/reviews">Reviews</a></h3>
 		<h3><a href="/categories">Categories</a></h3>
 		<h3><a href="/tags">Tags</a></h3>
-		
+
 		<header>
 			<h1>Review</h1>
 		</header>
 
 
-		<h2 th:text="${review.reviewTitle}"></h2>
-		<img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
-		<p th:text="${review.reviewContent}"></p>
+		<h2 th:text="${review.reviewTitle}"></h2> <!-- displays review title -->
+
+		<img th:src="${review.imageUrl}" alt="Picture of Restaurant"/> <!-- displays review image -->
+
+		<p th:text="${review.reviewContent}"></p> <!-- displays review content -->
+
+		<a th:href="@{/category(id=${review.category.categoryId})}" th:text="${review.category.categoryName}"></a> <!-- displays title of and link to review category -->
+
+		<ul>
+			<li th:each="tag: ${review.tags}">
+				<a th:href="@{/tag(id=${tag.tagId})}" th:text="${tag.tagName}"></a>
+			</li> <!-- displays title of and link to all tags associated with this review -->
+	 	</ul>
+
+	 	<form class="add-tag" method="POST">
+			<label>Add tag: </label>
+			<input type="text" name="tagName" />			
+			<button th:formaction="@{/review.addTag(tagName)}">add</button>	
+		</form>
+
 		<a href="http://localhost:8080/reviews">Go Back</a>
 		
 

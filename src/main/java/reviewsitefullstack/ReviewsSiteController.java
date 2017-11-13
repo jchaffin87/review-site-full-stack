@@ -59,4 +59,11 @@ public class ReviewsSiteController {
 		model.addAttribute("tag", tagRepo.findOne(tagId));
 		return "tag";
 	}
+
+	@RequestMapping("/add-tag")
+	public String addTagToReview(String tagName, Review review) {
+		review.addTag(tagName);
+		return "redirect:/course";
+	}
+
 }
